@@ -32,6 +32,8 @@ public class ListController {
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
+        //code for all
+
     }
 
     @RequestMapping(value = "")
@@ -54,7 +56,8 @@ public class ListController {
             model.addAttribute("title", "All Jobs");
         } else {
             jobs = JobData.findByColumnAndValue(column, value);
-            model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
+            model.addAttribute("title", "Jobs with " + columnChoices.get(column)
+                    + ": " + value);
         }
         model.addAttribute("jobs", jobs);
 
